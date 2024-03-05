@@ -1,0 +1,23 @@
+{
+  "name": "p-limit-cli-progress",
+  "version": "0.1.0",
+  "description": "Use p-limit with a cli-progress bar",
+  "exports": {
+    "types": "./index.d.ts",
+    "default": "./index.js"
+  },
+  "type": "module",
+  "keywords": [
+    "p-limit",
+    "cli-progress"
+  ],
+  "author": "jersou",
+  "license": "MIT",
+  "dependencies": {
+    "cli-progress": "^3.12.0",
+    "p-limit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.5"
+  }
+}
