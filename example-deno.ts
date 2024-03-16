@@ -1,3 +1,5 @@
+#!/usr/bin/env -S deno run
+
 // import { plimitp } from "nmp:p-limit-cli-progress@0.1.0";
 import { plimitp } from "./index.js";
 
