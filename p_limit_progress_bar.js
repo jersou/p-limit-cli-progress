@@ -24,7 +24,7 @@ export class PlimitProgressBar {
     barTitle,
     multiBar = createMultibar(),
   ) {
-      this.multiBar=multiBar
+    this.multiBar = multiBar;
     this.barTitle = barTitle;
     this.bar = this.multiBar.create(0, 0, { title: this.barTitle }, {
       format:
@@ -57,7 +57,7 @@ export class PlimitProgressBar {
     });
   }
 }
-export function plimitp(  max,  barTitle,  multiBar) {
+export function plimitp(max, barTitle, multiBar) {
   const plimitProgressBar = new PlimitProgressBar(max, barTitle, multiBar);
-  return (fn, title = "") =>    plimitProgressBar.limitp(fn, title);
+  return (fn, title = "") => plimitProgressBar.limitp(fn, title);
 }

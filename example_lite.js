@@ -1,5 +1,6 @@
+#!/usr/bin/env node
 // import { plimitp } from "p-limit-cli-progress";
-import { plimitp } from "./index.js";
+import { plimitp } from "./p_limit_progress_bar.js";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const data = [...Array(100).keys()]

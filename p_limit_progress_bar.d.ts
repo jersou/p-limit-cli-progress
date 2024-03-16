@@ -1,12 +1,21 @@
-import { MultiBar } from "cli-progress";
+import { Bar, MultiBar } from "cli-progress";
 import { LimitFunction } from "p-limit";
 
-export class PlimitProgressBar {
-  constructor(max: number, multiBar?: MultiBar);
-  limitp(fn: () => Promise<unknown>, title?: string): ReturnType<LimitFunction>;
-}
+export function createMultibar(): MultiBar;
 
+export class PlimitProgressBar {
+  tot: number;
+  inProgress: Set<{ title: string; timestamp: number }>;
+  bar: Bar;
+  limit: LimitFunction;
+  barTitle: string;
+  multiBar: MultiBar;
+  constructor(max: number, barTitle: string, multiBar?: MultiBar);
+  updateSteps(): void;
+  limitp<R>(fn: () => Promise<R>, title?: string): Promise<R>;
+}
 export function plimitp(
   max: number,
+  barTitle: string,
   multiBar?: MultiBar,
-): ReturnType<LimitFunction>;
+): (fn: () => Promise<unknown>, title?:string) => ReturnType<LimitFunction>;
